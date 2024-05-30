@@ -8,7 +8,7 @@ tart set --memory 8192 linux:latest # 8GB ram
 tart set --disk-size 30 linux:latest # 30GB
 
 # Here we choose debian but can be Ubuntu as well
-# as long as it is arm64
+# as long as it is arm64 for Apple Silicon CPUs
 # @see https://cdimage.debian.org/debian-cd/current/arm64/iso-dvd/
 # @see https://ubuntu.mirrors.ovh.net/ubuntu-releases/24.04/
 wget https://cdimage.debian.org/debian-cd/current/arm64/iso-dvd/debian-12.5.0-arm64-DVD-1.iso
