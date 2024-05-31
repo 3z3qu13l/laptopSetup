@@ -8,6 +8,7 @@ chsh -s /bin/zsh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 source ~/.zprofile
+brew tap buo/cask-upgrade
 
 brew install bat cmake eza ffmpeg git jq terminator vim
 
@@ -49,7 +50,7 @@ nvm install 22
 
 brew install --cask alt-tab brave-browser visual-studio-code vlc
 # brew install --cask libreoffice
-# brew install --cask discord whatsapp
+# brew install --cask discord slack whatsapp
 # brew install --cask spotify
 
 # filezilla https://filezilla-project.org/download.php

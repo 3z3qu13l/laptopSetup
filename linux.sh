@@ -94,3 +94,7 @@ sudo apt install -y vlc
 
 # filezilla https://filezilla-project.org/
 sudo apt install -y filezilla
+
+# slack
+wget https://downloads.slack-edge.com/desktop-releases/linux/x64/4.38.125/slack-desktop-4.38.125-amd64.deb -o slack-desktop.deb
+sudo apt install ./slack-desktop.deb
