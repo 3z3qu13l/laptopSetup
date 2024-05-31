@@ -19,7 +19,7 @@ sudo apt update && sudo apt upgrade -y
 apt install curl git htop wget
 sudo apt autoclean && sudo apt autoremove
 sudo reboot
-# run linux.sh 
+# Use linux.sh 
 
 # to start the VM later, run the following:
 tart run --dir="Projects" --capture-system-keys linux:latest

@@ -1,3 +1,10 @@
-# linuxSetup
+# laptopSetup
 
-Install linux terminal environment on fresh install
+Install Linux environment on fresh install
+> linux.sh
+
+Install MacOs environment on fresh install
+> macos.sh
+
+Install Linux VM on MacOs
+> linuxVMonMacOs.sh
