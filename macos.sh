@@ -10,10 +10,9 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 source ~/.zprofile
 brew tap buo/cask-upgrade
 
-brew install bat cmake eza ffmpeg git jq terminator vim
-
-brew tap homebrew/cask-fonts
+brew install bat cmake eza git htop jq terminator vim unzip wget
 brew install font-meslo-lg-nerd-font
+brew install --cask brave-browser iterm2 visual-studio-code
 #######################################################################
 # Manually install fonts                                              #
 # Manually set terminal font to MesloLGS NF                           #
@@ -23,15 +22,17 @@ brew install font-meslo-lg-nerd-font
 # ohmyzsh https://github.com/ohmyzsh/ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-brew install zsh-autosuggestions
+brew install zsh-autosuggestions zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
-source ~/.zshrc
-
-brew install zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-source ~/.zshrc
 
-sed -i 's/plugins=.*$/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/' ~/.zshrc
+#######################################################################
+# manually replace the plugins line from ~/.zshrc to
+# plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+#######################################################################
+source ~/.zshrc
 
 echo "alias ..='cd ..'" >> ~/.zshrc
 echo "alias ...='cd ../..'" >> ~/.zshrc
@@ -41,14 +42,24 @@ echo "alias ll='ls -ll'" >> ~/.zshrc
 
 # powerlevel10k https://github.com/romkatv/powerlevel10k
 brew install powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
-sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
+#######################################################################
+# manually replace the ZSH_THEME from ~/.zshrc to
+# powerlevel10k/powerlevel10k
+#######################################################################
 source ~/.zshrc
 
-brew install nvm # you may have to manually add a couple of lines in ~/.zshrc after install
+brew install nvm
+#######################################################################
+# Add the following to your shell profile e.g. ~/.profile or ~/.zshrc:
+# export NVM_DIR="$HOME/.nvm"
+#   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh" # This loads nvm
+#   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+#######################################################################
 nvm install 22
 
-brew install --cask alt-tab brave-browser visual-studio-code vlc
+brew install --cask alt-tab vlc
 # brew install --cask libreoffice
 # brew install --cask discord slack whatsapp
 # brew install --cask spotify

@@ -8,3 +8,6 @@ Install MacOs environment on fresh install
 
 Install Linux VM on MacOs
 > linuxVMonMacOs.sh
+
+Color themes for terminal
+> https://github.com/mbadolato/iTerm2-Color-Schemes

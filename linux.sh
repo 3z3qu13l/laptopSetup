@@ -15,7 +15,7 @@
 
 sudo apt update && sudo apt upgrade -y
 # sudo killall snap-store && sudo snap refresh
-sudo apt install -y apt-transport-https curl git htop wget gpg terminator
+sudo apt install -y apt-transport-https curl git htop wget gpg terminator unzip
 sudo apt remove --purge -y aisleriot gnome-2048 gnome-mahjongg gnome-mines gnome-sudoku
 sudo apt remove --purge -y thunderbird transmission-gtk transmission-common
 sudo apt autoclean && sudo apt autoremove
