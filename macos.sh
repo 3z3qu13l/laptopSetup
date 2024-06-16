@@ -10,7 +10,7 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 source ~/.zprofile
 brew tap buo/cask-upgrade
 
-brew install bat cmake eza git htop jq stats terminator vim unzip wget
+brew install bat cmake eza git btop jq stats terminator vim unzip wget
 brew install font-meslo-lg-nerd-font
 brew install --cask brave-browser iterm2 visual-studio-code
 #######################################################################
