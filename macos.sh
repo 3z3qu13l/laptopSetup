@@ -11,6 +11,7 @@ source ~/.zprofile
 brew tap buo/cask-upgrade
 
 brew install bat cmake eza git btop jq stats terminator tldr vim unzip wget
+brew install awscli aws-sam-cli
 brew install font-meslo-lg-nerd-font
 brew install --cask brave-browser iterm2 visual-studio-code
 #######################################################################
@@ -63,5 +64,7 @@ brew install --cask alt-tab vlc
 # brew install --cask libreoffice
 # brew install --cask discord slack whatsapp
 # brew install --cask spotify
+
+# docker https://desktop.docker.com/mac/main/arm64/Docker.dmg
 
 # filezilla https://filezilla-project.org/download.php
