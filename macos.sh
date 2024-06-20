@@ -13,7 +13,7 @@ brew tap buo/cask-upgrade
 brew install bat cmake eza git btop jq stats terminator tldr vim unzip wget
 brew install awscli aws-sam-cli
 brew install font-meslo-lg-nerd-font
-brew install --cask brave-browser iterm2 visual-studio-code
+brew install --cask brave-browser iterm2 visual-studio-code postman
 #######################################################################
 # Manually install fonts                                              #
 # Manually set terminal font to MesloLGS NF                           #
