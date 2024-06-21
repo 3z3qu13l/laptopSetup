@@ -31,7 +31,7 @@ echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlight
 
 #######################################################################
 # manually replace the plugins line from ~/.zshrc to
-# plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+# plugins=(git git-prompt gh zsh-syntax-highlighting zsh-autosuggestions)
 #######################################################################
 source ~/.zshrc
 
