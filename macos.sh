@@ -14,10 +14,16 @@ brew install bat cmake eza git btop jq stats terminator tldr vim unzip wget
 brew install awscli aws-sam-cli
 brew install font-meslo-lg-nerd-font
 brew install --cask brave-browser iterm2 visual-studio-code postman
+
+# Import color schemes
+git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git /tmp/iTerm2-Color-Schemes
+cd /tmp/iTerm2-Color-Schemes/
+tools/import-scheme.sh -v 'lovelace Dracula+ VibrantInk'
+
 #######################################################################
-# Manually install fonts                                              #
 # Manually set terminal font to MesloLGS NF                           #
 # You can also change terminal opacity/transparency                   #
+# You can also change terminal font colors                            #
 #######################################################################
 
 # ohmyzsh https://github.com/ohmyzsh/ohmyzsh
@@ -49,7 +55,16 @@ echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >> ~/
 # manually replace the ZSH_THEME from ~/.zshrc to
 # powerlevel10k/powerlevel10k
 #######################################################################
+
+# Shorter Prompt Line
+# vim ~/.p10k.zsh
+# remove "os_icon" from POWERLEVEL9K_LEFT_PROMPT_ELEMENTS
 source ~/.zshrc
+
+# terminal hotkeys
+# iTerm → Preferences → Profiles → Keys, set left ⌥ key acts as ESC+
+# add a new Key Mapping. — -Press ⌥ + ←. Select "Send Escape Sequence" for action. Input 'b'
+# add a new Key Mapping. — -Press ⌥ + →. Select "Send Escape Sequence" for action. Input 'f'
 
 brew install nvm
 #######################################################################

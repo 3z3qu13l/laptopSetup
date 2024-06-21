@@ -28,6 +28,7 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20B
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 sudo mv MesloLGS*.ttf /usr/share/fonts/
+
 #######################################################################
 # Manually set terminal font to MesloLGS NF                           #
 # You can also change terminal opacity/transparency                   #
@@ -68,6 +69,10 @@ source ~/.zshrc
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 p10k configure
+
+# Shorter Prompt Line
+# vim ~/.p10k.zsh
+# remove "os_icon" from POWERLEVEL9K_LEFT_PROMPT_ELEMENTS
 
 # nvm with node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
