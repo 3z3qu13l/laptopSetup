@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # === CONFIGURATION ===
-ARCHIVE_PATH=${1:-~/Downloads/dev_backup_20251105.tar.gz}
+ARCHIVE_PATH=${1:-~/Downloads/dev_backup.tar.gz}
 RESTORE_DIR=~/Desktop/dev_restore_temp
 
 # --- Colors ---
