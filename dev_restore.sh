@@ -59,6 +59,7 @@ if [ -d "$BACKUP_DIR/aws" ]; then
   mkdir -p ~/.aws
   cp -r "$BACKUP_DIR/aws/"* ~/.aws/
   chmod 600 ~/.aws/* 2>/dev/null || true
+  chmod 700 ~/.aws ~/.aws/cli ~/.aws/cli/cache ~/.aws/sso ~/.aws/sso/cache 2>/dev/null || true
 fi
 
 # === 4. npm config ===
