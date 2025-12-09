@@ -101,7 +101,7 @@ fi
 # === 9. Final archive creation ===
 echo -e "${BLUE}📦 Creating archive...${NC}"
 cd ~/Desktop || exit
-tar -czf dev_backup_$(date +%Y%m%d).tar.gz dev_backup_$(date +%Y%m%d)
+tar -czf dev_backup.tar.gz dev_backup_$(date +%Y%m%d)
 echo -e "${GREEN}✅ Backup complete: ~/Desktop/dev_backup_$(date +%Y%m%d).tar.gz${NC}"
 
 # === 10. Summary ===
