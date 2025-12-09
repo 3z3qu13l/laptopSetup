@@ -97,6 +97,7 @@ if [ -f "$BACKUP_DIR/Brewfile" ]; then
   fi
 
   if command -v brew &>/dev/null; then
+    export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
     brew bundle install --file="$BACKUP_DIR/Brewfile"
   fi
 fi
