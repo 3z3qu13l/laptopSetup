@@ -138,3 +138,9 @@ echo "Restored items:"
 command -v brew &>/dev/null && [ -f "$BACKUP_DIR/Brewfile" ] && echo "   - Homebrew packages"
 echo "---------------------------------------------------------------"
 echo -e "💡 Open a new terminal session to apply shell configuration changes."
+
+# === Bonus debug ===
+# - install required node version with nvm
+# - echo "pinentry-program /opt/homebrew/bin/pinentry-mac" > ~/.gnupg/gpg-agent.conf && gpgconf --kill gpg-agent && gpgconf --launch gpg-agent
+# - ./venv/bin/python3 -m build --version
+# - ssh-add --apple-use-keychain ~/.ssh/id_edxxxx
