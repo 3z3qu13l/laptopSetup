@@ -37,6 +37,27 @@ fi
 
 echo -e "📂 Extracted backup directory: ${YELLOW}$BACKUP_DIR${NC}"
 
+# === 7. Homebrew restore ===
+if [ -f "$BACKUP_DIR/Brewfile" ]; then
+  echo -e "${BLUE}🍺 Restoring Homebrew packages...${NC}"
+
+  if ! command -v brew &>/dev/null; then
+    echo -e "${YELLOW}⚠️ Homebrew is not installed.${NC}"
+    read -p "➡️ Install Homebrew now? (y/n): " REPLY
+    if [[ "$REPLY" == "y" ]]; then
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    else
+      echo -e "${YELLOW}🚫 Homebrew installation skipped.${NC}"
+    fi
+  fi
+
+  if command -v brew &>/dev/null; then
+    export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+    brew bundle install --file="$BACKUP_DIR/Brewfile"
+  fi
+fi
+
 # === 1. SSH ===
 if [ -d "$BACKUP_DIR/ssh" ]; then
   echo -e "${BLUE}🔑 Restoring SSH keys...${NC}"
@@ -80,27 +101,6 @@ if [ -d "$BACKUP_DIR/gpg" ]; then
   echo -e "${BLUE}🔐 Restoring GPG keys...${NC}"
   gpg --import "$BACKUP_DIR/gpg/public_keys.gpg" 2>/dev/null
   gpg --import "$BACKUP_DIR/gpg/private_keys.gpg" 2>/dev/null
-fi
-
-# === 7. Homebrew restore ===
-if [ -f "$BACKUP_DIR/Brewfile" ]; then
-  echo -e "${BLUE}🍺 Restoring Homebrew packages...${NC}"
-
-  if ! command -v brew &>/dev/null; then
-    echo -e "${YELLOW}⚠️ Homebrew is not installed.${NC}"
-    read -p "➡️ Install Homebrew now? (y/n): " REPLY
-    if [[ "$REPLY" == "y" ]]; then
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    else
-      echo -e "${YELLOW}🚫 Homebrew installation skipped.${NC}"
-    fi
-  fi
-
-  if command -v brew &>/dev/null; then
-    export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
-    brew bundle install --file="$BACKUP_DIR/Brewfile"
-  fi
 fi
 
 # === 8. VS Code restore ===
